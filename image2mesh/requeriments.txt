@@ -1,0 +1,46 @@
+# QT5
+sudo apt-get install qttools5-dev qtbase5-dev libqt5x11extras5-dev
+
+# PUGIXML
+sudo apt-get install libpugixml-dev
+
+# VTK
+git clone git://vtk.org/VTK.git
+
+mkdir VTK-build
+cd VTK-build
+cmake /path/to/VTK
+
+mkdir VTK-Release-build
+cd VTK-Release-build
+cmake -DCMAKE_BUILD_TYPE:STRING=Release /path/to/VTK
+
+Qt Setup
+mkdir qt5.2.1-install && cd qt5.2.1-install
+wget https://download.qt.io/archive/qt/5.2/5.2.1//qt-opensource-linux-x64-5.2.1.run
+chmod +x qt-opensource-linux-x64-5.2.1.run
+./qt-opensource-linux-x64-5.2.1.run
+
+# Embree high performance ray-tracing
+https://github.com/embree/embree/releases/tag/v3.0.0-beta.0/embree-3.0.0.x86_64.linux.tar
+
+sudo apt-get install cmake-curses-gui
+sudo apt-get install libtbb-dev
+sudo apt-get install freeglut3-dev
+sudo apt-get install libxmu-dev libxi-dev
+
+#Then, install embree
+git clone https://github.com/embree/embree.git 
+
+cd embree
+mkdir build
+cd build
+
+cmake-gui ..
+#DISABLE SUPPORT TO ISCP
+
+Configure
+Generate
+
+make 
+make install
